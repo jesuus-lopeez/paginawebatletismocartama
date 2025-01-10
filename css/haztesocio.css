@@ -1,0 +1,263 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: red;
+    color: white;
+    padding: 15px 5%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #ff6b6b;
+}
+/* Plans Section */
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptación automática */
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.plan {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2), -15px -15px 30px rgba(255, 255, 255, 0.9);
+}
+
+.plan h3 {
+    color: #ff6b6b;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.plan p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 15px 0;
+    font-style: italic;
+    overflow: hidden; /* Evita que el texto se desborde */
+}
+
+.plan button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+}
+
+.plan button:hover {
+    background-color: #ff4a4a;
+    transform: scale(1.1);
+}
+
+/* Back Button */
+.back-button {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-button a {
+    text-decoration: none;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button a:hover {
+    background-color: #ff4a4a;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: auto; /* Asegura que el footer quede al final */
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Media Queries para Móviles */
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+}
+
+
+.activities {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Ajustar el tamaño del título en la cabecera */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Ajustar el tamaño del título dentro de cada plan */
+    .plan h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajustar el tamaño del texto de los botones dentro de cada plan */
+    .plan button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    /* Ajustar el tamaño del botón "Volver a planes" */
+    .back-button a {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    /* Ajustar la disposición de los planes para que se apilen una debajo de la otra */
+    .plans {
+        display: flex;
+        flex-direction: column; /* Apilar las cajas una debajo de la otra */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Ajustar cada plan para que ocupe todo el ancho disponible */
+    .plan {
+        width: 100%; /* Cada caja ocupa el 100% del ancho en móviles */
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Ajustar el tamaño del texto de la descripción de cada plan */
+    .plan p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Ajustar el tamaño del pie de página */
+    footer {
+        font-size: 0.9rem;
+        padding: 15px 5%;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .activities {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}

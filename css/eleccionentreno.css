@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #eaeaea, #ffffff);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: red;
+    color: white;
+    padding: 15px 5%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #ff6b6b;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.competitions-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.competition-box {
+    background-color: white;
+    border: 4px solid #f94d6a; /* Bordes más gruesos */
+    border-radius: 25px; /* Bordes redondeados más grandes */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.competition-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #f94d6a, transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.competition-box:hover::before {
+    opacity: 0.3;
+}
+
+.competition-box:hover {
+    transform: scale(1.05) rotate(-2deg); /* Rotación ligera y escalado */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    background-color: #ffe6e6; /* Fondo más suave al hacer hover */
+}
+
+.competition-box h3 {
+    color: #ff6b6b;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.competition-box p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px; /* Botones con bordes redondeados */
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f94d6a;
+    transform: scale(1.1); /* Aumenta ligeramente al pasar el ratón */
+}
+
+.back-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button a {
+    text-decoration: none;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #f94d6a;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 5%;
+    margin-top: auto; /* Hace que el footer se empuje al fondo */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    /* Ajustar el tamaño del título en la cabecera */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Ajustar el tamaño del título dentro de cada plan */
+    .plan h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajustar el tamaño del texto de los botones dentro de cada plan */
+    .plan button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    /* Ajustar el tamaño del botón "Volver a planes" */
+    .back-button a {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    /* Ajustar la disposición de los planes para que se apilen una debajo de la otra */
+    .plans {
+        display: flex;
+        flex-direction: column; /* Apilar las cajas una debajo de la otra */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Ajustar cada plan para que ocupe todo el ancho disponible */
+    .plan {
+        width: 100%; /* Cada caja ocupa el 100% del ancho en móviles */
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Ajustar el tamaño del texto de la descripción de cada plan */
+    .plan p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Ajustar el tamaño del pie de página */
+    footer {
+        font-size: 0.9rem;
+        padding: 15px 5%;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .activities {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
